@@ -1,4 +1,7 @@
-from src.personnage import Personnage
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+from personnage import Personnage
 
 def test_attaque_basique():
     hero = Personnage("Kael", "Guerrier")
