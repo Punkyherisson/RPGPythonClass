@@ -8,6 +8,7 @@ from personnage import Personnage
 def test_monstre_attaque_personnage():
     gobelin = Monstre("Gobelin", niveau=1)
     hero = Personnage("Kael", "Guerrier")
+    hero.defense = 0  # Ajoute cette ligne
     vie_initiale = hero.vie
     gobelin.attaquer(hero)
     assert hero.vie < vie_initiale
