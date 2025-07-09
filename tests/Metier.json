@@ -1,0 +1,23 @@
+[
+  { "nom": "Guerrier", "type_metier": "combat", "effet_passif": { "force": 5, "defense": 3 } },
+  { "nom": "Barbare", "type_metier": "combat", "effet_passif": { "force": 7, "vitesse": -1 } },
+  { "nom": "Archer", "type_metier": "combat", "effet_passif": { "agilite": 5, "critique": 5 } },
+  { "nom": "Druide", "type_metier": "combat", "effet_passif": { "mana": 10, "regeneration": 2 } },
+  { "nom": "Mage", "type_metier": "combat", "effet_passif": { "intelligence": 7, "mana": 10 } },
+  { "nom": "Prêtre", "type_metier": "combat", "effet_passif": { "soin": 5, "mana": 5 } },
+  { "nom": "Paladin", "type_metier": "combat", "effet_passif": { "defense": 6, "soin": 3 } },
+  { "nom": "Mercenaire", "type_metier": "combat", "effet_passif": { "force": 4, "or": 10 } },
+
+  { "nom": "Mineur", "type_metier": "recolte", "effet_passif": { "endurance": 5, "chance": 2 } },
+  { "nom": "Bûcheron", "type_metier": "recolte", "effet_passif": { "force": 3, "vitesse": 1 } },
+  { "nom": "Agriculteur", "type_metier": "recolte", "effet_passif": { "regeneration": 2, "chance": 3 } },
+
+  { "nom": "Forgeron", "type_metier": "artisanat", "effet_passif": { "force": 2, "durabilite": 5 } },
+  { "nom": "Menuisier", "type_metier": "artisanat", "effet_passif": { "vitesse": 2, "chance": 2 } },
+  { "nom": "Couturier", "type_metier": "artisanat", "effet_passif": { "agilite": 2, "defense": 2 } },
+  { "nom": "Alchimiste", "type_metier": "artisanat", "effet_passif": { "potions": 5, "mana": 5 } },
+
+  { "nom": "Barde", "type_metier": "special", "effet_passif": { "charisme": 5, "chance": 3 } },
+  { "nom": "Voleur", "type_metier": "special", "effet_passif": { "vitesse": 5, "discretion": 5 } },
+  { "nom": "Assassin", "type_metier": "special", "effet_passif": { "critique": 10, "discretion": 5 } }
+]

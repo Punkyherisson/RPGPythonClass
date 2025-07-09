@@ -1,0 +1,21 @@
+import pytest
+from src.metier import Metier
+
+def test_creation_metier():
+    m = Metier("Guerrier", "Spécialiste du combat au corps à corps")
+    assert m.nom == "Guerrier"
+    assert m.niveau == 1
+    assert m.xp == 0
+
+def test_gain_xp_et_monte_niveau():
+    m = Metier("Mage", "Maître de la magie")
+    m.gagner_xp(150)
+    assert m.niveau == 2
+    assert m.xp == 50
+
+def test_max_niveau():
+    m = Metier("Barde", "Chanteur magique")
+    m.niveau = 100
+    m.gagner_xp(500)
+    assert m.niveau == 100
+    assert m.xp == 100  # plafonné
