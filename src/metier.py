@@ -1,16 +1,33 @@
 class Metier:
-    def __init__(self, nom, type_metier, effet_passif=None):
-        self.nom = nom
-        self.type_metier = type_metier  # "combat", "recolte", "artisanat", "special"
-        self.effet_passif = effet_passif or {}
+    def __init__(self, nom: str, domaine: str, bonus_base: dict):
+        self.nom = nom                      # "Guerrier", "Mage", etc.
+        self.domaine = domaine              # "combat", "magie", etc.
+        self.bonus_base = bonus_base if bonus_base is not None else {}        # {"force": 5, "defense": 3}
+        self.niveau = 1
+        self.xp = 0
+        self.xp_max = 100
 
-    def appliquer_effets(self, personnage):
-        for stat, bonus in self.effet_passif.items():
-            personnage.stats[stat] = personnage.stats.get(stat, 0) + bonus
+    def gagner_xp(self, quantite: int):
+        self.xp += quantite
+        while self.xp >= self.xp_max and self.niveau < 100:
+            self.xp -= self.xp_max
+            self.niveau += 1
+            self.xp_max = int(self.xp_max * 1.2)  # XP nécessaire augmente à chaque niveau
 
-    def __str__(self):
-        return f"{self.nom} ({self.type_metier})"
-    
+    @property
+    def bonus(self):
+        # Bonus évolutif : augmente légèrement avec le niveau
+        bonus_evolutif = {}
+        for attr, val in self.bonus_base.items():
+            bonus_evolutif[attr] = val + int(self.niveau / 10)
+        return bonus_evolutif
+
+    @classmethod
+    def afficher_metiers(cls, liste_metiers):
+        print("\n📜 Liste des Métiers Disponibles :\n")
+        for m in liste_metiers:
+            bonus_str = ', '.join(f"{k}: {v}" for k, v in m.bonus_base.items())
+            print(f"🔹 {m.nom} [{m.domaine}] — Bonus de départ : {bonus_str}")    
 metiers = [
 
     # 🔪 Métiers de Combat
