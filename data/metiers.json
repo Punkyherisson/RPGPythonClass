@@ -1,0 +1,20 @@
+[
+  {"nom": "Guerrier", "description": "Maîtrise des armes et armures."},
+  {"nom": "Barbare", "description": "Force brute, combat sauvage."},
+  {"nom": "Archer", "description": "Expert en tir à distance."},
+  {"nom": "Druide", "description": "Maîtrise de la nature et soins."},
+  {"nom": "Mage", "description": "Spécialiste des sorts offensifs."},
+  {"nom": "Prêtre", "description": "Soins et bénédictions sacrées."},
+  {"nom": "Paladin", "description": "Combattant sacré, défenseur du bien."},
+  {"nom": "Mercenaire", "description": "Soldat à louer, versatile."},
+  {"nom": "Mineur", "description": "Extraction de minerais."},
+  {"nom": "Bûcheron", "description": "Abattage d’arbres et récolte de bois."},
+  {"nom": "Forgeron", "description": "Fabrication d’armes et armures."},
+  {"nom": "Menuisier", "description": "Construction en bois."},
+  {"nom": "Couturier", "description": "Création de vêtements et armures légères."},
+  {"nom": "Alchimiste", "description": "Création de potions et élixirs."},
+  {"nom": "Agriculteur", "description": "Culture de plantes utiles."},
+  {"nom": "Barde", "description": "Utilise la musique pour booster les alliés."},
+  {"nom": "Voleur", "description": "Discret et agile."},
+  {"nom": "Assassin", "description": "Maître de l’élimination rapide."}
+]
