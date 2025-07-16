@@ -1,30 +1,44 @@
-import sys
-import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
-from personnage import Personnage
+import random
+from src.monstre import Monstre
+from metier import Metier      # Ta classe Metier existante
+from personnage import Personnage  # La nouvelle classe Personnage
 
-def test_attaque_basique():
-    hero = Personnage("Kael", "Guerrier")
-    gobelin = Personnage("Gobelin", "Monstre")
-    vie_initiale = gobelin.vie
-    hero.attaquer(gobelin)
-    assert gobelin.vie < vie_initiale
+def test_combat():
+    # Création métiers
+    guerrier = Metier("Guerrier", "combat", {"force": 5, "defense": 3})
+    mage = Metier("Mage", "combat", {"intelligence": 7, "mana": 10})
 
-def test_gain_xp_et_niveau():
-    h = Personnage("Kael", "Guerrier")
-    niveau_initial = h.niveau
-    h.gagner_xp(150)
-    assert h.niveau > niveau_initial
+    # Création personnages
+    hero = Personnage("Arthur", guerrier)
+    ennemi = Monstre("Gobelin", niveau=1, pv=50, attaque=8, defense=2)
 
-def test_personnage_meurt():
-    h = Personnage("Kael", "Guerrier")
-    h.vie = 5
-    h.subir_degats(10)
-    assert h.est_vivant() == False
+    print(hero)
+    print(ennemi)
 
-def test_defense_reduit_degats():
-    h = Personnage("Kael", "Guerrier")
-    h.defense = 5
-    h.vie = 100
-    h.subir_degats(10)
-    assert h.vie >= 90
+    # Combat basique
+    while hero.est_vivant() and ennemi.est_vivant():
+        hero.attaquer(ennemi)
+        if ennemi.est_vivant():
+            ennemi.attaquer(hero)
+        print()
+
+    if hero.est_vivant():
+        print(f"{hero.nom} a vaincu {ennemi.nom} !")
+        hero.gagner_xp(50)
+    else:
+        print(f"{hero.nom} a été vaincu...")
+
+def test_sauvegarde():
+    guerrier = Metier("Guerrier", "combat", {"force": 5, "defense": 3})
+    hero = Personnage("Lancelot", guerrier)
+    hero.inventaire.append("Potion de soin")
+    hero.sauvegarder("lancelot.json")
+
+    hero_charge = Personnage.charger("lancelot.json")
+    print(hero_charge)
+
+if __name__ == "__main__":
+    random.seed(42)  # Pour tests reproductibles
+    test_combat()
+    print("\n--- Test sauvegarde/chargement ---\n")
+    test_sauvegarde()

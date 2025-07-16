@@ -1,0 +1,19 @@
+{
+    "nom": "Lancelot",
+    "metier": {
+        "nom": "Guerrier",
+        "domaine": "combat",
+        "niveau": 1,
+        "xp": 0,
+        "xp_max": 100,
+        "bonus_base": {
+            "force": 5,
+            "defense": 3
+        }
+    },
+    "pv_max": 100,
+    "pv": 100,
+    "inventaire": [
+        "Potion de soin"
+    ]
+}
