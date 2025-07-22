@@ -15,5 +15,9 @@
     "pv": 100,
     "inventaire": [
         "Potion de soin"
-    ]
+    ],
+    "race": {
+        "nom": null,
+        "modificateurs": {}
+    }
 }
