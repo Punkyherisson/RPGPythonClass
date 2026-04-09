@@ -8,6 +8,7 @@ Bienvenue dans **RPGPythonClass**, un projet Python orienté objet pour simuler 
 - Simuler des combats entre héros et monstres
 - Gérer des objets : armes, potions, inventaire
 - Relier plus tard à une interface graphique HTML/JavaScript
+. utiliser ce code pour faire un jeu
 
 ## 📦 Structure du projet
 
